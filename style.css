@@ -1,0 +1,130 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    padding: 10pt;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40pt; 
+    font-size: 15pt;
+}
+
+.nameplatenavbar {
+    color: #db2f2f;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.navbar a { 
+    color: #919191;
+    text-decoration: none;
+    transition: color 0.8s ease, opacity 0.5s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: #db2f2f;;
+}
+
+.navbar:has(a:hover) a:not(:hover) {
+  opacity: 50%;
+}
+
+/* SHOE LOOK UP SECTION */
+
+.searchenginedescription {
+    color:white;
+    padding: 0px 10px 40px 10px;
+}
+
+.searchengine {
+    background-image: url("shoebackground.jpeg");
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.shoe-lookup-input {
+    box-sizing: border-box;
+    width: 70%;
+    height: 80px;
+    padding: 10px 20px;
+    border: 1px solid #919191;
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+.shoe-lookup-input::placeholder {
+    color: #c0c0c0;
+}
+
+/* TAB SECTION */
+
+.tab {
+    overflow: hidden;
+    padding: 10pt;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40pt; 
+    justify-content: center;
+    height: 60px;
+}
+
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  transition: 0.3s;
+  line-height: 1.5em;
+}
+
+.tab:has(button:hover) button:not(:hover) {
+  opacity: 50%;
+}
+
+.tab button:hover {
+    font-size: 1.1em;
+    color: #db2f2f;
+}
+
+.tab button.active {
+    color: #db2f2f;
+    font-size: 1.1em;
+    font-weight: 10px;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  animation: fadeEffect 2s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
