@@ -70,7 +70,7 @@ body {
     width: 70%;
     height: 80px;
     padding: 10px 20px;
-    border: 1px solid #919191;
+    border: 1px solid #000000;
     border-radius: 20px;
     font-size: 1.2em;
 }
@@ -86,9 +86,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     display: flex;
     flex-wrap: wrap;
-    gap: 40pt; 
-    justify-content: center;
-    height: 60px;
+    justify-content: space-evenly;
+    max-height: 50px;
 }
 
 .tab button {
@@ -119,12 +118,73 @@ body {
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
   animation: fadeEffect 2s;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+/* Help Section */
+
+.helpsection {
+    background-image: url("help.png");
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    margin: 40px 0px 40px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.helpdetails {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 30px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: auto;
+    border-radius: 5em;
+}
+
+.helpheaders {
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.guides {
+    padding-left: 40px;
+}
+
+.help-link {
+    display: flex;
+    flex-direction: column;
+    font-size: px;
+}
+
+.helpsection a { 
+    padding-top: 10px;
+    color: #919191;
+    text-decoration: none;
+    transition: color 0.8s ease, opacity 0.5s ease;
+}
+
+.helpsection a:hover,
+.helpsection a:focus {
+    color: #db2f2f;;
+}
+
+.helpsection:has(a:hover) a:not(:hover) {
+  opacity: 75%;
 }
