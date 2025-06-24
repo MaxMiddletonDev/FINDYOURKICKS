@@ -52,7 +52,7 @@ body {
 }
 
 .searchengine {
-    background-image: url("shoebackground.jpeg");
+    background-image: url("../Images/shoebackground.jpeg");
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.6);
     background-repeat: no-repeat;
@@ -78,6 +78,15 @@ body {
     color: #c0c0c0;
 }
 
+#searchresults {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    animation: fadeEffect 2s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* TAB SECTION */
 
 .tab {
@@ -91,17 +100,17 @@ body {
 }
 
 .tab button {
-  background-color: inherit;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 20px;
-  transition: 0.3s;
-  line-height: 1.5em;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    transition: 0.3s;
+    line-height: 1.5em;
 }
 
 .tab:has(button:hover) button:not(:hover) {
-  opacity: 50%;
+    opacity: 50%;
 }
 
 .tab button:hover {
@@ -132,7 +141,7 @@ body {
 /* Help Section */
 
 .helpsection {
-    background-image: url("help.png");
+    background-image: url("../Images/help.png");
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.6);
     background-repeat: no-repeat;
@@ -141,7 +150,6 @@ body {
     height: 300px;
     width: 100%;
     display: flex;
-    margin: 40px 0px 40px 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -170,7 +178,6 @@ body {
 .help-link {
     display: flex;
     flex-direction: column;
-    font-size: px;
 }
 
 .helpsection a { 
@@ -188,3 +195,4 @@ body {
 .helpsection:has(a:hover) a:not(:hover) {
   opacity: 75%;
 }
+

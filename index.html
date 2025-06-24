@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>FINDYOURKICKS</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="Assets\CSS\style.css">
+    <script src="Assets\JavaScript\papaparse.min.js"></script>
+    <script src="Assets\JavaScript\shoegrabber.js"></script>
+    <script src="Assets\JavaScript\script.js"></script>
 <body>
   <div class="navbar">
       <div class="nameplatenavbar">FIND YOUR KICKS</div>
@@ -16,10 +18,14 @@
   <div class="searchengine" id="searchsection">
         <div class="searchenginedescription">
             <h1 class="searchengineheader">FIND YOUR KICKS</h1>
-            <div class="searchengineinstructor">ENTER ANY SNEAKER NAME TO UNCOVER ITS FULL STATS AND DISCOVER BUYING OPTIONS</div>
+            <div class="searchengineinstructor">ENTER ANY SNEAKER NAME TO UNCOVER ITS FULL STATS</div>
         </div>
-        <input class="shoe-lookup-input" type="ShoeLookup" placeholder="SEARCH UP A SHOE">
+        <input class="shoe-lookup-input" type="text"  id="shoeLookupInput" placeholder="SEARCH UP A SHOE">
   </div>
+
+  <div id="searchresults">
+        <p></p>
+    </div>
 
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Discover')" id="defaultTabOpen">DISCOVER</button>
