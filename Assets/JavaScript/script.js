@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (defaultTabButton) {
         defaultTabButton.click();
     }
-
 });
 
 window.openTab = openTab;
@@ -17,12 +16,12 @@ function keyPressed(event) {
     event.preventDefault();
     const shoeLookupInput = document.getElementById("shoeLookupInput");
     const shoeName = shoeLookupInput.value.trim();
-    const searchElem = document.getElementById("searchresults");
+    const searchElem = document.getElementById("searchResults");
     if (shoeName) {
       const shoeData = getShoeData();
       const shoe = shoeData.find(s => String(s.Model || '').toLowerCase() === shoeName.toLowerCase());
-      searchElem.classList.remove("fade-in");
-      searchElem.classList.add("fade-out");
+      searchElem.classList.remove("fadeIn");
+      searchElem.classList.add("fadeOut");
       setTimeout(() => {
         if (shoe) {
           searchElem.innerHTML = `
@@ -36,27 +35,11 @@ function keyPressed(event) {
             <p>Size: ${shoe.Size}</p>
           `;
         } else {
-          searchElem.innerHTML = `<p>Shoe not found.</p>`;
+          searchElem.innerHTML = "<p>Shoe not found.</p>";
         }
-        searchElem.classList.remove("fade-out");
-        searchElem.classList.add("fade-in");
+        searchElem.classList.remove("fadeOut");
+        searchElem.classList.add("fadeIn");
       }, 300);
     }
   }
-}
-
-function openTab(event, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  document.getElementById(tabName).style.display = "block";
-  event.currentTarget.className += " active";
 }

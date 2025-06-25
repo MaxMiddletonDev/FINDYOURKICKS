@@ -9,60 +9,53 @@
     <script src="Assets\JavaScript\script.js"></script>
 <body>
   <div class="navbar">
-      <div class="nameplatenavbar">FIND YOUR KICKS</div>
-      <a href="profile.html" class="nav-link">PROFILE</a>
-      <a href="settings.html" class="nav-link">SETTINGS</a>
-      <a href="contact.html" class="nav-link">CONTACT</a>
+      <div class="nameplateNavbar">FIND YOUR KICKS</div>
+      <a href="profile.html" class="navLink">PROFILE</a>
+      <a href="settings.html" class="navLink">SETTINGS</a>
+      <a href="contact.html" class="navLink">CONTACT</a>
   </div>
 
-  <div class="searchengine" id="searchsection">
-        <div class="searchenginedescription">
-            <h1 class="searchengineheader">FIND YOUR KICKS</h1>
-            <div class="searchengineinstructor">ENTER ANY SNEAKER NAME TO UNCOVER ITS FULL STATS</div>
-        </div>
-        <input class="shoe-lookup-input" type="text"  id="shoeLookupInput" placeholder="SEARCH UP A SHOE">
+  <div class="welcomeSection">
+    <div class="welcomeTextContainer">
+      <h1 class="welcomeTextHeader">WELCOME TO FIND YOUR KICKS</h1>
+      <p class="welcomeText">A SNEAKER DATABASE TO FIND DETAILS ON YOUR SHOES</p>
+      <a href="#searchEngineContainer">
+        <button class="welcomeButton" href="#searchSection">GET STARTED</button>
+      </a>
+    </div>
   </div>
-
-  <div class="searchresults" id="searchresults">
-    <p>SEARCH RESULTS FOUND HERE</p>
-  </div>
-
-  <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Discover')" id="defaultTabOpen">DISCOVER</button>
-    <button class="tablinks" onclick="openTab(event, 'Trending')">TRENDING</button>
-    <button class="tablinks" onclick="openTab(event, 'New In')">NEW IN</button>
-  </div>
-  <div id="Discover" class="tabcontent">
-    <h3>Discover</h3>
-    <p>This is the discover page.</p>
-  </div>
-  <div id="Trending" class="tabcontent">
-    <h3>TRENDING</h3>
-    <p>This is the trending page.</p>
-  </div>
-  <div id="New In" class="tabcontent">
-    <h3>NEW IN</h3>
-    <p>This is the New In page.</p>
-  </div>
-  <div class="helpsection">
-    <div class="helpdetails">
-      <div class="helpandadvice">
-        <h3 class="helpheaders">HELP & ADVICE</h3>
-        <a href="#searchsection" class="help-link">SEARCH</a>
-        <a href="#contact" class="help-link">CONTACT</a>
+  <div class="searchEngineContainer" id="searchEngineContainer">
+    <div class="searchEngine" id="searchSection">
+      <div class="searchEngineDescription">
+        <h1 class="searchEngineHeader">FIND YOUR KICKS</h1>
+        <div class="searchEngineInstructor">ENTER ANY SNEAKER NAME TO UNCOVER ITS FULL STATS</div>
       </div>
-      <div class="selectionboxes">
+      <input class="shoeLookupInput" type="text"  id="shoeLookupInput" placeholder="SEARCH UP A SHOE">
+      <div class="searchResults" id="searchResults">
+        <p class="searchPlaceholderText">SEARCH RESULTS WILL APPEAR HERE AFTER YOU TYPE AND PRESS ENTER</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="helpSection">
+    <div class="helpDetails">
+      <div class="helpAndAdvice">
+        <h3 class="helpHeaders">HELP & ADVICE</h3>
+        <a href="#searchSection" class="helpLink">SEARCH</a>
+        <a href="#contact" class="helpLink">CONTACT</a>
+      </div>
+      <div class="selectionBoxes">
           <div class="guides">
-            <h3 class ="helpheaders">GUIDES</h3>
-            <a href="sizing.html" class="help-link">SIZING</a>
-            <a href="authentication.html" class="help-link">AUTHENTICATION</a>
-            <a href="cleaning.html" class="help-link">CLEANING</a>
-            <a href="lacing.html" class="help-link">LACING</a>
+            <h3 class ="helpHeaders">GUIDES</h3>
+            <a href="sizing.html" class="helpLink">SIZING</a>
+            <a href="authentication.html" class="helpLink">AUTHENTICATION</a>
+            <a href="cleaning.html" class="helpLink">CLEANING</a>
+            <a href="lacing.html" class="helpLink">LACING</a>
           </div>
       </div>
       <div class="support">
-        <h3 class ="helpheaders">SUPPORT</h3>
-        <a href="terminology.html" class="help-link">TERMINOLOGY</a>
+        <h3 class ="helpHeaders">SUPPORT</h3>
+        <a href="terminology.html" class="helpLink">TERMINOLOGY</a>
       </div>
     </div>
   </div>

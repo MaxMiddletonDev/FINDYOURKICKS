@@ -4,54 +4,55 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    font-weight: 600;
 }
-
 
 /* NAVIGATION BAR */
 
 .navbar {
+    font-weight: 600;
     padding: 10pt;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     display: flex;
     flex-wrap: wrap;
     gap: 40pt; 
     font-size: 15pt;
+    position: fixed;                
+    width: 100%;          
+    z-index: 1000;        
+    background: #fff; 
 }
 
-.nameplatenavbar {
+.nameplateNavbar {
     color: #db2f2f;
     display: flex;
     justify-content: flex-start;
     margin-right: auto;
 }
 
-.navbar a { 
+.navLink { 
     color: #919191;
     text-decoration: none;
     transition: color 0.8s ease, opacity 0.5s ease;
 }
 
-.navbar a:hover,
-.navbar a:focus {
-    color: #db2f2f;;
+.navLink:hover,
+.navLink:focus {
+    color: #db2f2f;
 }
 
 .navbar:has(a:hover) a:not(:hover) {
   opacity: 50%;
 }
+/* WELCOME SECTION */
 
-/* SHOE LOOK UP SECTION */
-
-.searchenginedescription {
-    color:white;
-    padding: 0px 10px 40px 10px;
-}
-
-.searchengine {
+.welcomeSection {
     background-image: url("../Images/shoebackground.jpeg");
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.6);
@@ -61,34 +62,132 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
     text-align: center;
-    padding: 150px 0;
+    width: 100%;
+    height: 100vh;
+}
+.welcomeTextContainer {
+    color: #fff;
+    padding: 40px 30px;
+    margin: 0 auto;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    max-width: 700px;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: black solid 2px;
+    font-size: 1.5em;
 }
 
-.shoe-lookup-input {
+.welcomeText {
+    font-size: 1em;
+    text-shadow: 0 6px 12px rgba(0,0,0,0.7), 2px 2px 3px #000000;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.welcomeButton {
+    background-color: #a72323;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: .5em;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.5s;
+}
+.welcomeButton:hover {
+    background-color: #db2f2f;
+    transform: scale(1.05);
+}
+
+/* SHOE LOOK UP SECTION */
+
+.searchEngineContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.searchEngine {
+    border-radius: 1em;
+    padding: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    width: 60%;
+    margin: 40px auto;
+    border:#000000 solid 1px;
+}
+
+.searchEngineHeader {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+.searchEngineDescription {
+    color:black;
+    padding: 0px 0px 40px 0px;
+}
+
+.shoeLookupInput {
     box-sizing: border-box;
     width: 70%;
     height: 80px;
-    padding: 10px 20px;
-    border: 1px solid #000000;
+    padding: 10px;
+    border: 1px solid #a7a7a7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
     border-radius: 20px;
     font-size: 1.2em;
 }
-.shoe-lookup-input::placeholder {
-    color: #c0c0c0;
+
+.shoeEngine:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
 }
 
-.searchresults {
+.shoeLookupInput::placeholder {
+    color: #c0c0c0;
+}
+.searchPlaceholderText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    height: 100%;           
+    width: 100%;              
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: #a7a7a7;
+}
+
+.searchResults {
     display: block;
-    padding: 6px 12px;
+    padding: 10px;
     border-top: none;
     margin-bottom: 20px;
     text-align: center;
-    border: #000000 solid 1px;
+    border: #a7a7a7 solid 1px;    
+    border-radius: .5em;
     width: 70%;
     margin: 20px auto;
-    background-color: white;
+    height: 400px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
 }
+
 
 @keyframes fadeOut {
   from { opacity: 1; }
@@ -98,119 +197,61 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.fade-out {
+.fadeOut {
   animation: fadeOut 0.3s forwards;
 }
-.fade-in {
+.fadeIn {
   animation: fadeIn 0.3s forwards;
-}
-
-/* TAB SECTION */
-
-.tab {
-    overflow: hidden;
-    padding: 10pt;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    max-height: 50px;
-}
-
-.tab button {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 20px;
-    transition: 0.3s;
-    line-height: 1.5em;
-}
-
-.tab:has(button:hover) button:not(:hover) {
-    opacity: 50%;
-}
-
-.tab button:hover {
-    font-size: 1.1em;
-    color: #db2f2f;
-}
-
-.tab button.active {
-    color: #db2f2f;
-    font-size: 1.1em;
-    font-weight: 10px;
-}
-
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border-top: none;
-  animation: fadeEffect 2s;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
 }
 
 /* Help Section */
 
-.helpsection {
-    background-image: url("../Images/help.png");
-    background-blend-mode: multiply;
-    background-color: rgba(0, 0, 0, 0.6);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 300px;
+.helpSection {
+    height: auto;
     width: 100%;
     display: flex;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+    font-weight: 400;
 }
 
-.helpdetails {
-    background-color: white;
+.helpDetails {
+    background-color: rgb(43, 40, 58);
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    padding: 30px 20px 20px 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    margin: auto;
-    border-radius: 5em;
+    width: 100%;
+    padding: 10px 10px 10px 10px;  
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.helpheaders {
+.helpHeaders {
     font-size: 20px;
     text-decoration: underline;
     text-underline-offset: 5px;
+    color: white;
 }
 
 .guides {
     padding-left: 40px;
 }
 
-.help-link {
+.helpLink {
     display: flex;
     flex-direction: column;
 }
 
-.helpsection a { 
+.helpSection a { 
     padding-top: 10px;
-    color: #919191;
+    color: #dddddd;
     text-decoration: none;
     transition: color 0.8s ease, opacity 0.5s ease;
 }
 
-.helpsection a:hover,
-.helpsection a:focus {
+.helpSection a:hover,
+.helpSection a:focus {
     color: #db2f2f;;
 }
 
-.helpsection:has(a:hover) a:not(:hover) {
+.helpSection:has(a:hover) a:not(:hover) {
   opacity: 75%;
 }
-

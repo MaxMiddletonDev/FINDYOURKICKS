@@ -5,19 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
 }); 
 
 function loadShoeData() {
-    let shoeDataSet = "../Data/shoe_dataset.csv"
+    let shoeDataSet = "../Data/shoe_dataset.csv";
 
     Papa.parse(shoeDataSet, {
         download: true,
         header: true,
         complete: function(results) {
             shoeData = results.data;
-            console.log("CSV Successful:", shoeData);
+            console.log("csvSuccessful:", shoeData);
         },
         error: function(err) {
-            console.error("CSV Error", err);
+            console.error("csvError", err);
         }
-    })
+    });
 }
 
 function getShoeData() {
