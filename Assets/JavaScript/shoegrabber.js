@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }); 
 
 function loadShoeData() {
-    let shoeDataSet = "../Data/shoe_dataset.csv";
+    let shoeDataSet = "Data/shoe_dataset.csv";
 
     Papa.parse(shoeDataSet, {
         download: true,

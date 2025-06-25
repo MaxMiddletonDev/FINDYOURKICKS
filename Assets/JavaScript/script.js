@@ -3,13 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (shoeLookupInput) {
         shoeLookupInput.addEventListener("keydown", keyPressed);
     }
-    const defaultTabButton = document.getElementById("defaultTabOpen");
-    if (defaultTabButton) {
-        defaultTabButton.click();
-    }
 });
-
-window.openTab = openTab;
 
 function keyPressed(event) {
   if (event.key === "Enter") {
