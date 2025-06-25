@@ -15,24 +15,32 @@ window.openTab = openTab;
 function keyPressed(event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    console.log("Keypressed worked")
     const shoeLookupInput = document.getElementById("shoeLookupInput");
     const shoeName = shoeLookupInput.value.trim();
+    const searchElem = document.getElementById("searchresults");
     if (shoeName) {
       const shoeData = getShoeData();
       const shoe = shoeData.find(s => String(s.Model || '').toLowerCase() === shoeName.toLowerCase());
-      if (shoe) {
-        var searchElem = document.getElementById("searchresults");
-        searchElem.innerHTML = `
-          <h2>${shoe.Model}</h2>
-          <p>Brand: ${shoe.Brand}</p>
-          <p>Price: $${shoe.Price}</p>
-        `
-        searchElem.classList.remove("searchresults");
-        searchElem.classList.add("searchResultsActive");
-      } else {
-        document.getElementById("searchresults").innerHTML = `<p>Shoe not found.</p>`;
-      }
+      searchElem.classList.remove("fade-in");
+      searchElem.classList.add("fade-out");
+      setTimeout(() => {
+        if (shoe) {
+          searchElem.innerHTML = `
+            <h2>${shoe.Model}</h2>
+            <p>Brand: ${shoe.Brand}</p>
+            <p>Price: $${shoe.Price}</p>
+            <p>Type: ${shoe.Type}</p>
+            <p>Gender: ${shoe.Gender}</p>
+            <p>Color: ${shoe.Color}</p>
+            <p>Material: ${shoe.Material}</p>
+            <p>Size: ${shoe.Size}</p>
+          `;
+        } else {
+          searchElem.innerHTML = `<p>Shoe not found.</p>`;
+        }
+        searchElem.classList.remove("fade-out");
+        searchElem.classList.add("fade-in");
+      }, 300);
     }
   }
 }

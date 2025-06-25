@@ -79,21 +79,30 @@ body {
 }
 
 .searchresults {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
-    animation: fadeEffect 2s;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.searchResultsActive {
     display: block;
     padding: 6px 12px;
     border-top: none;
-    animation: fadeEffect 2s;
-    margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    border: #000000 solid 1px;
+    width: 70%;
+    margin: 20px auto;
+    background-color: white;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+.fade-in {
+  animation: fadeIn 0.3s forwards;
 }
 
 /* TAB SECTION */
